@@ -1,0 +1,88 @@
+1.
+[ylj@test Desktop]$ cd ~
+[ylj@test ~]$ mkdir cli-practice
+
+2.
+[ylj@test ~]$ cd cli-practice/
+[ylj@test cli-practice]$ touch readme.md
+
+3.
+[ylj@test cli-practice]$ cat > readme.md << EOF
+> Hi there, this is a readme file.
+> EOF
+
+4.
+[ylj@test cli-practice]$ echo 'This is the second line of the readme file.' >> readme.md
+[ylj@test cli-practice]$ cat readme.md 
+Hi there, this is a readme file.
+This is the second line of the readme file.
+
+5.
+[ylj@test cli-practice]$ mv readme.md readme.txt
+[ylj@test cli-practice]$ ls
+readme.txt
+
+6.
+[ylj@test cli-practice]$ mkdir document
+[ylj@test cli-practice]$ ls
+document  readme.txt
+
+7.
+[ylj@test cli-practice]$ mv readme.txt document
+[ylj@test cli-practice]$ ls
+document
+[ylj@test cli-practice]$ cd document/
+[ylj@test document]$ ls
+readme.txt
+[ylj@test document]$ mv readme.txt introduction.txt
+[ylj@test document]$ ls
+introduction.txt
+
+8.
+[ylj@test document]$ cp introduction.txt readme.txt
+[ylj@test document]$ ls
+introduction.txt  readme.txt
+
+9.
+[ylj@test document]$ cat readme.txt 
+Hi there, this is a readme file.
+This is the second line of the readme file.
+[ylj@test document]$ echo 'The quick brown fox jumps over a lazy dog' > readme.txt
+[ylj@test document]$ cat readme.txt 
+The quick brown fox jumps over a lazy dog
+
+10.
+[ylj@test document]$ cd ..
+[ylj@test cli-practice]$ cp -r document docs
+[ylj@test cli-practice]$ ls
+docs  document
+[ylj@test cli-practice]$ cd docs
+[ylj@test docs]$ ls
+introduction.txt  readme.txt
+
+11.
+[ylj@test docs]$ rm -r  ~/cli-practice/document
+[ylj@test docs]$ cd ~/cli-practice/
+[ylj@test cli-practice]$ ls
+docs
+
+12.
+[ylj@test cli-practice]$ mkdir -p ~/cli-practice/parent/child/docs
+[ylj@test cli-practice]$ cd ~/cli-practice/parent/child/docs
+[ylj@test docs]$ pwd
+/home/ylj/cli-practice/parent/child/docs
+
+13.
+[ylj@test docs]$ cp ~/cli-practice/docs/introduction.txt ~/cli-practice/parent/child/docs
+[ylj@test docs]$ cd ~/cli-practice/parent/child/docs
+[ylj@test docs]$ ls
+introduction.txt
+
+
+
+
+
+
+
+
+
